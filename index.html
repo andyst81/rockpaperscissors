@@ -4,15 +4,20 @@
         <link rel="stylesheet" href="stylesheet.css">
         <script>
           
-            let player = prompt('Make your choice - rock, paper, or scissors');
-            console.log('You chose ' + player);
-            
-            // if ( player === 'rock' || player === 'paper' || player === 'scissors' ) {
-            //     console.log('You chose ' + player);
-            // } else {
-            //     alert('Please try again');
-            //     let player = playerChoice();
-            // }
+            function playerChoice() {
+                let play = prompt('Make your choice - rock, paper, or scissors');
+                play = play.toLowerCase()
+
+                if ( play === 'rock' || play === 'paper' || play === 'scissors' ) {
+                    return play;
+                } else {
+                    alert('Please try again');
+                  playerChoice();
+                }
+            }
+
+            let player = playerChoice();
+            alert('You chose ' + player);
 
             function computerChoice() {
                 switch (Math.floor(Math.random() * 3)) {
@@ -26,32 +31,32 @@
             }
 
             let computer = computerChoice();
-            console.log('Computer chose ' + computer);
+            alert('Computer chose ' + computer);
 
             function playRound(playerChoice, computerChoice){
                 if (playerChoice === 'rock') {
                     if (computerChoice === 'rock') {
-                        console.log('You drew with the computer')
+                        alert('You drew with the computer')
                     } else if (computerChoice === 'paper') {
-                        console.log('Computer wins - you lose')
+                        alert('Computer wins, you are a loser')
                     } else {
-                        console.log('You are a winner')
+                        alert('You are a winner')
                     }
                 } else if (playerChoice === 'paper') {
                     if (computerChoice === 'rock') {
-                        console.log('You are a winner')
+                        alert('You are a winner')
                     } else if (computerChoice === 'paper') {
-                        console.log('You drew with the computer')
+                        alert('You drew with the computer')
                     } else {
-                        console.log('Computer wins - you lose')
+                        alert('Computer wins, you are a loser')
                     }
                 } else {
                     if (computerChoice === 'rock') {
-                        console.log('Computer wins - you lose')
+                        alert('Computer wins, you are a loser')
                     } else if (computerChoice === 'paper') {
-                        console.log('You are a winner')
+                        alert('You are a winner')
                     } else {
-                        console.log('You drew with the computer')
+                        alert('You drew with the computer')
                     }
                 }
 
@@ -61,7 +66,6 @@
         </script>
     </head>
     <body>
-
     </body>
 
 </html>
