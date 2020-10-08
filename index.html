@@ -2,7 +2,63 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="stylesheet.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+        <script>
+          
+            let player = prompt('Make your choice - rock, paper, or scissors');
+            console.log('You chose ' + player);
+            
+            // if ( player === 'rock' || player === 'paper' || player === 'scissors' ) {
+            //     console.log('You chose ' + player);
+            // } else {
+            //     alert('Please try again');
+            //     let player = playerChoice();
+            // }
+
+            function computerChoice() {
+                switch (Math.floor(Math.random() * 3)) {
+                    case 0:
+                        return 'rock';
+                    case 1:
+                        return 'paper';
+                    case 2:
+                        return 'scissors';
+                }
+            }
+
+            let computer = computerChoice();
+            console.log('Computer chose ' + computer);
+
+            function playRound(playerChoice, computerChoice){
+                if (playerChoice === 'rock') {
+                    if (computerChoice === 'rock') {
+                        console.log('You drew with the computer')
+                    } else if (computerChoice === 'paper') {
+                        console.log('Computer wins - you lose')
+                    } else {
+                        console.log('You are a winner')
+                    }
+                } else if (playerChoice === 'paper') {
+                    if (computerChoice === 'rock') {
+                        console.log('You are a winner')
+                    } else if (computerChoice === 'paper') {
+                        console.log('You drew with the computer')
+                    } else {
+                        console.log('Computer wins - you lose')
+                    }
+                } else {
+                    if (computerChoice === 'rock') {
+                        console.log('Computer wins - you lose')
+                    } else if (computerChoice === 'paper') {
+                        console.log('You are a winner')
+                    } else {
+                        console.log('You drew with the computer')
+                    }
+                }
+
+            }
+
+            playRound(player, computer)
+        </script>
     </head>
     <body>
 
