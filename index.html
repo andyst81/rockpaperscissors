@@ -2,70 +2,17 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="stylesheet.css">
-        <script>
-          
-            function playerChoice() {
-                let play = prompt('Make your choice - rock, paper, or scissors');
-                play = play.toLowerCase()
-
-                if ( play === 'rock' || play === 'paper' || play === 'scissors' ) {
-                    return play;
-                } else {
-                    alert('Please try again');
-                  playerChoice();
-                }
-            }
-
-            let player = playerChoice();
-            alert('You chose ' + player);
-
-            function computerChoice() {
-                switch (Math.floor(Math.random() * 3)) {
-                    case 0:
-                        return 'rock';
-                    case 1:
-                        return 'paper';
-                    case 2:
-                        return 'scissors';
-                }
-            }
-
-            let computer = computerChoice();
-            alert('Computer chose ' + computer);
-
-            function playRound(playerChoice, computerChoice){
-                if (playerChoice === 'rock') {
-                    if (computerChoice === 'rock') {
-                        alert('You drew with the computer')
-                    } else if (computerChoice === 'paper') {
-                        alert('Computer wins, you are a loser')
-                    } else {
-                        alert('You are a winner')
-                    }
-                } else if (playerChoice === 'paper') {
-                    if (computerChoice === 'rock') {
-                        alert('You are a winner')
-                    } else if (computerChoice === 'paper') {
-                        alert('You drew with the computer')
-                    } else {
-                        alert('Computer wins, you are a loser')
-                    }
-                } else {
-                    if (computerChoice === 'rock') {
-                        alert('Computer wins, you are a loser')
-                    } else if (computerChoice === 'paper') {
-                        alert('You are a winner')
-                    } else {
-                        alert('You drew with the computer')
-                    }
-                }
-
-            }
-
-            playRound(player, computer)
-        </script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+        
     </head>
     <body>
+        <div class="icons">
+            <h1>Make your choice - rock, paper or scissors by clicking the image below</h1>
+            <div id="rock" onclick="rock()"><i class="far fa-hand-rock fa-5x"></i></div>
+            <div id="paper"><i class="far fa-hand-paper fa-5x"></i></div>
+            <div id="scissors"><i class="far fa-hand-scissors fa-5x"></i></div>
+        </div>
+        <script src="game.js"></script>
     </body>
 
 </html>
